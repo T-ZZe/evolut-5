@@ -1,0 +1,13 @@
+name: SkillTree
+version: 2.0
+main: fr.skills.SkillsPlugin
+api-version: "26.3"
+commands:
+  skills:
+    description: Ouvre l'arbre de compétences
+    usage: /skills [wand|points|pack|give|reset|reload]
+    aliases: [competences]
+permissions:
+  skills.admin:
+    description: Donner des points / reset / reload
+    default: op

@@ -1,0 +1,43 @@
+# ============================================================
+#  SkillTree 2.0
+# ============================================================
+
+# --- Resource pack intégré --------------------------------
+# Le pack (textures du menu + sceptre) est DANS le jar.
+#  mode: builtin  -> le plugin héberge lui-même le pack (mini serveur HTTP)
+#                    => ouvre le port TCP "port" sur ton serveur / box,
+#                       et mets dans "host" l'IP publique ou le domaine.
+#  mode: external -> tu héberges SkillTreePack.zip toi-même (le fichier est
+#                    copié dans plugins/SkillTree/) et tu mets l'URL ci-dessous.
+resource-pack:
+  enabled: true
+  mode: builtin
+  host: ""            # ex: "play.monserveur.fr" ou "123.45.67.89"
+  port: 8123
+  external-url: ""    # utilisé seulement si mode: external
+  external-sha1: ""   # optionnel : sinon calculé depuis le pack intégré
+  force: false        # true = kick si le joueur refuse
+  prompt: "§6SkillTree §7: textures du menu de compétences et du sceptre."
+
+# --- Capacités actives (clic droit avec le sceptre) --------
+abilities:
+  dash:                 # Voie de la Vitesse
+    uses: 3
+    window: 30          # secondes
+  shock:                # Voie de la Force : onde de choc
+    cooldown: 30
+    radius: 5
+    damage: 8.0
+    strength-seconds: 8
+  bastion:              # Voie de la Résistance
+    cooldown: 45
+    resistance-seconds: 6
+  grow:                 # Voie du Fermier : croissance instantanée
+    cooldown: 20
+    radius: 6
+  veil:                 # Voie du Camouflage : voile d'ombre
+    cooldown: 40
+    duration: 12
+  stealth:              # passifs du Camouflage
+    still-seconds: 3    # immobile + accroupi => invisible (palier 2)
+    sneak-detect: 6     # accroupi : les mobs ne te repèrent qu'à moins de X blocs (palier 1)
